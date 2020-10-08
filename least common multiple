@@ -1,0 +1,8 @@
+/*least common multiple*/
+
+gcd(0,N,N).
+gcd(N,0,N).
+gcd(M,N,N):- M mod N = 0, !.
+gcd(M,N,GCD):- X is N mod M , gcd(X,M,GCD), !.
+gcd(M,N,GCD):- X is M mod N , gcd(X,N,GCD).
+lcm(X,Y,GCD):- gcd(X,Y,A), GCD is (X*Y)/A.
