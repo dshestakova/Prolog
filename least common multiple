@@ -6,3 +6,6 @@ gcd(M,N,N):- M mod N = 0, !.
 gcd(M,N,GCD):- X is N mod M , gcd(X,M,GCD), !.
 gcd(M,N,GCD):- X is M mod N , gcd(X,N,GCD).
 lcm(X,Y,GCD):- gcd(X,Y,A), GCD is (X*Y)/A.
+
+?-lcm(2,6,Z) => 6
+?-lcm(3,2,5) => false
