@@ -1,4 +1,11 @@
-/*Multiplication by -1*/
+/*positions of negative elements of the list*/
 
-double([],[]).
-double([A|Tail],[B|Tail_]):- B is (-1)*A, double(Tail,Tail_).
+negative([],_,[]).
+negative([H|T],N,[N1|L]):-
+	H<0,
+    N1 is N+1,
+    negative(T,N1,L).
+negative([H|T],N,L):-
+    H>=0,
+    N1 is N+1,
+    negative(T,N1,L).
