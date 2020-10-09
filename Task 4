@@ -1,0 +1,5 @@
+/*Doubling list items*/
+
+repl(_,_,[],[]):-!.
+repl(A,B,[A|Tail],[B|Tail_]):-!,repl(A,B,Tail,Tail_).
+repl(A,B,[X|Tail],[X|Tail_]):-repl(A,B,Tail,Tail_).
