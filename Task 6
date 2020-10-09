@@ -1,0 +1,4 @@
+/*Multiplication by -1*/
+
+double([],[]).
+double([A|Tail],[B|Tail_]):- B is (-1)*A, double(Tail,Tail_).
