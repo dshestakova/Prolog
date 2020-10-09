@@ -1,4 +1,4 @@
-/*Doubling list items*/
+/*Changing list item*/
 
 repl(_,_,[],[]):-!.
 repl(A,B,[A|Tail],[B|Tail_]):-!,repl(A,B,Tail,Tail_).
