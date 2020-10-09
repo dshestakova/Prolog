@@ -1,0 +1,4 @@
+/*cycle for*/
+
+for(N,N).
+for(I,N):- I<N, write("*"), A is (I+1), for(A,N), !.
