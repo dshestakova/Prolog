@@ -1,0 +1,4 @@
+/*Doubling list items*/
+
+double([],[]).
+double([A|Tail],[B|Tail_]):- B is 2*A, double(Tail,Tail_).
