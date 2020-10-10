@@ -1,0 +1,27 @@
+/*Selection sort*/
+
+/*   1.Находим min
+	 2.Удаляем его из списка
+     3.Оставшийся список сортируем.
+	 4.Приписываем минимальный элемент в качестве головы к отсортированному списку.*/
+
+
+
+min([H|T],M):- M > H,!, 
+    min(T,H).
+min([H|T],M):- M =< H,!,
+    min(T,M).
+minimum([B|L]):-min(L,B),!. %works
+
+
+del(_,[],[]).
+del(H,[H|T],T):-!.
+del(X,[H|T],[H|T_]):-del(X,T,T_). %works
+
+ssort([],[]).
+ssort([L],[x|T]):-
+	minimum([X|L]),
+    del(X,L,L1),
+    ssort(L1,T). %doesn't fucking work
+
+/*To fix: variable = min
