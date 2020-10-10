@@ -1,0 +1,26 @@
+/*Fibonacci number*/
+
+/*
+F(0,0).
+F(1,1).
+F(N,X):- N1=N-1, N2=N-2, X=X1+X2, F(N1,X1),F(N2,X2).
+ */
+
+/* С:
+ {
+    if(n == 0) return 0;
+    if(n == 1 || n == 2) return 1;
+ 
+    return f(n-1)+f(n-2);
+}
+1, 1, 2, 3, 5, 8, 13, 21, …
+*/
+
+func(N,F):-
+    N>2,
+    N1 is N-1, 
+    N2 is N-2,
+    func(N1,X1),
+    func(N2,X2),
+    F is X1+X2;   
+    F is 1.
