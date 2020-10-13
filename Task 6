@@ -1,11 +1,12 @@
 /*positions of negative elements of the list*/
+%N=1
 
-negative([],_,[]).
-negative([H|T],N,[N1|L]):-
+negative([],_,[]).		%Случай с пустым списком
+negative([H|T],N,[N1|L]):- 	%Если первый элемент отрицательный, то во второй список записываем его индекс и запускаем функцию без этого элемента
 	H<0,
     N1 is N+1,
     negative(T,N1,L).
-negative([H|T],N,L):-
+negative([H|T],N,L):-		%Если первый элеметн был положительным, то сразу переходим к следующему
     H>=0,
     N1 is N+1,
     negative(T,N1,L).
