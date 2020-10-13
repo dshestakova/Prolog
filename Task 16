@@ -31,3 +31,4 @@ F(N,X):-
     func(N2,X2),
     F is X1+X2;   
     F is 1. */
+
